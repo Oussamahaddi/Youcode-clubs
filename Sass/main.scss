@@ -1,6 +1,6 @@
-@import "./images/";
-@import "./variable/variables.scss";
-@import "./font/font.sass";
+
+@import "./font/font";
+@import "./variable/variables";
 
 * {
     padding: 0;
@@ -8,6 +8,119 @@
     box-sizing: border-box;
 }
 
-h1 {
-    color: red;
+%flex {
+    display: flex;
+    justify-content: center;
+}
+
+.join_us {
+    width: 100%;
+    @extend %flex;
+    .container {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+
+        .title {
+            margin: 4rem 0;
+            background-color: $darkBlue;
+            width: fit-content;
+            padding: 1rem 3rem;
+            grid-column: span 2;
+            place-self: center;
+            h2 {
+                font-family: $AbyssFont;
+                color: $white;
+            }
+        }
+
+        .how_to_join {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            h3 {
+                font-family: $IMFellFont;
+                word-spacing: .5rem;
+                // color: $white;
+                position: relative;
+                span {
+                    color: $lightBlue;
+                    font-size: 2rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: $lightBlue;
+                    width: 25px;
+                    height: 5px;
+                    left: 0;
+                    bottom: -2px;
+                }
+            }
+            > p {
+                font-family: $itemFont;
+                color: $lightGray;
+                text-indent: 15px;
+                margin-left: 1rem;
+            }
+            .box_btn {
+                @extend %flex;
+                gap: 1rem;
+                > div {
+                    background: #eee;
+                    padding: .5rem;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 0 0 5px 0 gray;
+                    gap: .6rem;
+                    img {
+                        width: 40px;
+                    }
+                    strong {
+                        font-family: $IMFellFont;
+                    }
+                }
+            }
+        }
+
+        .animate_ball {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(135deg, $darkBlue, $lightBlue);
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 15px 0 gray;
+            
+            animation-name: animate_ball;
+            animation-duration: 2s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            // animation-timing-function: linear;
+        }
+
+    }
+}
+
+@keyframes animate_ball {
+    0% {
+        left: 50%;
+        top: 0%;
+        height: 200px;
+        width: 200px;
+    }
+    50% {
+        width: 230px;
+        height: 170px;
+        // transform: translateY(0%);
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        height: 200px;
+    }
+
 }

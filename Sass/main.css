@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.join_us .container .how_to_join .box_btn, .join_us {
+  display: flex;
+  justify-content: center;
+}
+
+.join_us {
+  width: 100%;
+}
+.join_us .container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+.join_us .container .title {
+  margin: 4rem 0;
+  background-color: #1877F2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 3rem;
+  grid-column: span 2;
+  place-self: center;
+}
+.join_us .container .title h2 {
+  font-family: "Abyssinica SIL", serif;
+  color: #fff;
+}
+.join_us .container .how_to_join {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.join_us .container .how_to_join h3 {
+  font-family: "IM Fell English SC", serif;
+  word-spacing: 0.5rem;
+  position: relative;
+}
+.join_us .container .how_to_join h3 span {
+  color: #5EC2ED;
+  font-size: 2rem;
+}
+.join_us .container .how_to_join h3::after {
+  content: "";
+  position: absolute;
+  background-color: #5EC2ED;
+  width: 25px;
+  height: 5px;
+  left: 0;
+  bottom: -2px;
+}
+.join_us .container .how_to_join > p {
+  font-family: "Itim", cursive;
+  color: #C5C5C5;
+  text-indent: 15px;
+  margin-left: 1rem;
+}
+.join_us .container .how_to_join .box_btn {
+  gap: 1rem;
+}
+.join_us .container .how_to_join .box_btn > div {
+  background: #eee;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 0 gray;
+  gap: 0.6rem;
+}
+.join_us .container .how_to_join .box_btn > div img {
+  width: 40px;
+}
+.join_us .container .how_to_join .box_btn > div strong {
+  font-family: "IM Fell English SC", serif;
+}
+.join_us .container .animate_ball {
+  width: 200px;
+  height: 200px;
+  background-image: linear-gradient(135deg, #1877F2, #5EC2ED);
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px 0 gray;
+  -webkit-animation-name: animate_ball;
+          animation-name: animate_ball;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes animate_ball {
+  0% {
+    left: 50%;
+    top: 0%;
+    height: 200px;
+    width: 200px;
+  }
+  50% {
+    width: 230px;
+    height: 170px;
+  }
+  100% {
+    top: 100%;
+    left: 50%;
+    height: 200px;
+  }
+}
+
+@keyframes animate_ball {
+  0% {
+    left: 50%;
+    top: 0%;
+    height: 200px;
+    width: 200px;
+  }
+  50% {
+    width: 230px;
+    height: 170px;
+  }
+  100% {
+    top: 100%;
+    left: 50%;
+    height: 200px;
+  }
+}/*# sourceMappingURL=main.css.map */
