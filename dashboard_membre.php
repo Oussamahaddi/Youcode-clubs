@@ -38,7 +38,6 @@
                         <h4><span>M</span>embers</h4>
                     </div>
                     <div class="admin_icon">
-                        <img src="./frontend/Sass/images/🦆 icon _search outline_.png" alt="">
                         <img src="./frontend/Sass/images/🦆 icon _bell outline_.png" alt="">
                         <img src="./frontend/Sass/images/art 1.png" alt="" width="50px" class="admin">
                         <img src="./frontend/Sass/images/🦆 icon _log out_.png" alt="">
@@ -58,6 +57,7 @@
                         if($checkResult > 0){
                             echo '<table>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Nome</th>
                                     <th>Class</th>
                                     <th>Email</th>
@@ -68,16 +68,20 @@
                                 
                                 echo '
                                 <tr num='.$row['Id'].'>
-                                    <td>'.$row['Name'].'</td>
+                                    <td>'.$row['Id'] .'</td>
+                                    <td><span>'.$row['FullName'].'</span></td>
                                     <td>'.$row['Class'] .'</td>
                                     <td>'.$row['Email'].'</td>
                                     <td>'.$row['Club'].'</td>
-                                    <td><button><i class="fa-regular fa-pen-to-square"></i></button> <button><i class="fa-solid fa-trash"></i></button></td>
+                                    <td>
+                                    <a href="./updateMemeberforum.php?updateid='.$row['Id'].'&updateName='.$row['FullName'].'&updateClub='.$row['Club'].'&updateClass='.$row['Class'].'&updateEmail='.$row['Email'].'"><button>Update<i class="fa-regular fa-pen-to-square"></i></button></a>
+                                    <a href="./backend/Module/deleteMemeber.php?deletedid='.$row['Id'].'" ><button>Delete<i class="fa-solid fa-trash"></i></button></a>
+                                    </td>
                                 </tr>';
                             }
                             echo '</table>';
                         } else {
-                            echo "tableaux vide";
+                            echo "<div style='color: white'>No membre exist</div>";
                         }
                     ?>
                 </div>
@@ -86,25 +90,38 @@
         <div class="pop_up pop" id="pop_up">
             <div class="form">
                 <form action="./backend/Module/addMembre.php" method="POST">
+                    
+                    <div class="id">
+                    <label for="id">Id</label>
+                        <input type="text" name="Id" id="id" placeholder="Member Id" readonly>
+                    </div>
                     <div class="name">
-                        <label for="name">Name</label> <br>
-                        <input type="text" name="Name" id="name" placeholder="Full name" required>
+                        <label for="name">Name</label>
+                        <input type="text" name="FullName" id="name" placeholder="Full name" required>
                     </div>
                     <div class="class">
-                        <label for="class">Class</label> <br>
+                        <label for="class">Class</label>
                         <input type="text" name="Class" id="class" placeholder="Class name" required>
                     </div>
                     <div class="email">
-                        <label for="email">Email</label> <br>
+                        <label for="email">Email</label>
                         <input type="email" name="Email" id="email" placeholder="jhonsmith@gmail.com" required>
                     </div>
                     <div class="club">
-                        <label for="club">Club</label> <br>
-                        <input type="text" name="Club" id="club" placeholder="Club name" required>
+                        <label for="club">Club</label>
+                        <select name="Club" id="club" required>
+                            <optgroup label="Clubs" focused>
+                                <option value="Art">Art</option>
+                                <option value="Sport">Sport</option>
+                                <option value="It">It</option>
+                                <option value="Programming">Programming</option>
+                                <option value="Environement">Environement</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <div class="btns">
                         <input type="submit" id="submit" class="submit" value="Ajouter">
-                        <button class="submit" id="cancel" style="background-color:red; cursor: pointer;">Cancel</button>
+                        <input type="reset" value="cancel" class="submit" id="cancel" style="background-color:red; cursor: pointer;">
                     </div>
                 </form>
             </div>
@@ -112,6 +129,6 @@
     </div>
 
 </body>
-<script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
     <script src="./frontend/js/addMembre.js" type="module"></script>
 </html>

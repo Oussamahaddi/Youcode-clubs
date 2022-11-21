@@ -36,15 +36,19 @@
             <div class="ps">
                 <label for="password">Password</label>
                 <input type="password" name="Password" placeholder="Password" id="password" required> <br>
-                <?php if (isset($_GET['erreur'])) {
-                    echo "<span style='color:red;margin-top: 10px;'>Username or Password incorrect.</span>";
-                }?>
+
+                <?php 
+                    if (isset($_GET['erreur'])) {
+                        echo "<span style='color:red;margin-top: 10px;'>Username or Password incorrect.</span>";
+                    }
+                ?>
+
             </div>
             <div class="go">
                 <input class="ok" type="submit">
             </div>
             <div class="back">
-                    <a href="./index.php"><li class="Back">Back To Home</li></a>
+                <a href="./index.php"><li class="Back">Back To Home</li></a>
             </div>
         </form>
     </div>

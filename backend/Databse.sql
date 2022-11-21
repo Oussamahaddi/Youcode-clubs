@@ -17,8 +17,14 @@ CREATE TABLE USER(
 CREATE TABLE CLUBS(
     Id INT NOT NULL PRIMARY KEY auto_increment,
 	Name VARCHAR(255),
-    Description VARCHAR(255),
+    Description VARCHAR(10000),
 	Image varchar(255)
+);
+
+CREATE TABLE ADMIN(
+    Id INT NOT NULL PRIMARY KEY auto_increment,
+	UserName VARCHAR(255),
+    Password VARCHAR(255)
 );
 
 SELECT * FROM ADMIN;
