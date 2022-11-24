@@ -29,35 +29,35 @@
 
                         echo '
 
-                        <div class="Club name">
-                            <label for="id">Club id</label> <br>
-                            <input type="text" name="id" id="id"" value='.$id.' readonly >
+                        <div class="Club id" style="display:none;">
+                            <label for="id">Club id</label>
+                            <input type="number" name="id" id="id"" value="'.$id.'" readonly >
                         </div>
 
                             <!--  Update club name -->
                             
                             <div class="Club name">
-                                <label for="name">Club name</label> <br>
+                                <label for="name">Club name</label>
                                 <input type="text" name="Clubname" id="name" value="'.$name.'" required>
                             </div>
                             
                             <!-- Add club description -->
                             <div class="description">
-                                <label for="description">Club description</label> <br>
+                                <label for="description">Club description</label>
                                 <textarea name="Description" id="name" required>'.$description.'</textarea>
                             </div>
 
                             <!-- Add club image -->
 
                             <div class="image">
-                                <label for="image">Club image</label> <br>
+                                <label for="image">Club image</label>
                                 <input type="file" name="Image" id="name">
                             </div>
 
                             <div class="btns">
                                 <input type="submit" id="submit" class="submit" value="Ajouter">
-                                <a href="./dashboard_clubs.php"><button value="Cancel" class="submit" id="cancel" style="background-color:red; cursor: pointer;">test</button></a>
-                            </div>
+                                <a href="./dashboard_clubs.php"><button value="Cancel" class="submit" id="cancel" style="background-color:red; cursor: pointer;">Cancel</button></a>
+                                </div>
                         '
                     
                     ?>

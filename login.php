@@ -1,5 +1,6 @@
 
 <?php
+    session_start();
     require_once './backend/Module/Connection.php';
 ?>
 
@@ -25,6 +26,13 @@
     </div>
 
     <div class="login">
+
+        <?php 
+            if (isset($_SESSION['UserName'])) {
+                header('location: ./dashboard_membre.php');
+            } else {
+        ?>
+
         <form action="./backend/Module/authentification.php" method="POST">
             <div class="text-1">
                 <h1>ACOUNT LOGIN</h1>
@@ -39,7 +47,7 @@
 
                 <?php 
                     if (isset($_GET['erreur'])) {
-                        echo "<span style='color:red;margin-top: 10px;'>Username or Password incorrect.</span>";
+                        echo "<span style='color:red;margin-top: 10px; background: #ffd3d3; padding: .5rem; border-radius: 3px;'>Username or Password incorrect.</span>";
                     }
                 ?>
 
@@ -48,10 +56,15 @@
                 <input class="ok" type="submit">
             </div>
             <div class="back">
-                <a href="./index.php"><li class="Back">Back To Home</li></a>
+                <a href="./index.php"><i class="fa-solid fa-arrow-left-long"></i><li class="Back">Back To Home</li></a>
             </div>
         </form>
+
+        <?php } ?>
+        
     </div>
 </body>
 
+    <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
+    <script src="./frontend/js/addMembre.js" type="module"></script>
 </html>

@@ -1,3 +1,11 @@
+
+<?php
+
+    session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +22,13 @@
     <!-- header start -->
     <header id="header_container">
         <div class="header_container" >
+            <div class="nav_icon" id="nav_icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <div class="logo">
                 <img src="./frontend/Sass/images/logo.png" alt="" width="200px">
             </div>
-            <nav class="nav_bar">
+            <nav class="nav_bar" id="nav_bar_list">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#club">Clubs</a></li>
@@ -36,7 +47,6 @@
     <main class="article" id="home">
 
         <div class="article_container">
-
             <div class="background_img"><img src="./frontend/Sass/images/youcodefamily.png" alt=""></div>
 
             <div class="content">
@@ -69,7 +79,6 @@
 
     </main>
     <!-- slide home end -->
-
 
     <!-- body -->
     <div class="container" id="club">
@@ -386,9 +395,8 @@
                     </form>
                 </div>
             </div>
-            <div class="contact_img">
-                <img src="./frontend/Sass/images/contact.png" alt="" width="100%">
-            </div>
+            <div class="contact_img" style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=asfi%20youcode+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="100%" frameborder="0"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe></div>
+
         </div>
     </section>
     <!-- contact us end -->
@@ -396,22 +404,23 @@
 
     <!-- footer start -->
     <footer>
-        <div class="container">
+        <div class="footer_container">
             <div class="tel">
                 <p>+81 123-5678-9101</p>
+                <p>Privacy Policy</p>
             </div>
             <div class="copyright">
-                <img src="./images/logo/hitaka_logo.png" alt="" width="50px">
-                <p>&copy;Copyright. Designed And Developed By Oussama Haddi</p>
+                <img src="./frontend/Sass/images/logo.png" alt="" width="50px">
+                <p>&copy;Copyright. Designed And Developed By Anas Rabie Oussama</p>
             </div>
             <div class="social_media">
                 <div class="media">
-                    <a href="#"><img src="./images/icons/🦆 icon _facebook_.png" alt=""></a>
-                    <a href="#"><img src="./images/icons/🦆 icon _linkedin_.png" alt=""></a>
-                    <a href="#"><img src="./images/icons/🦆 icon _share_.png" alt=""></a>
-                    <a href="#"><img src="./images/icons/🦆 icon _twitter_.png" alt=""></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <p>Privacy Policy</p>
+                
             </div>
         </div>
     </footer>
@@ -430,10 +439,10 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-                document.getElementById("header_container").style.cssText = "padding: 1rem 10rem; background-color: rgba(34 38 43 /1)";
+                document.getElementById("header_container").classList.add("scrol_header");
 
             } else {
-                document.getElementById("header_container").style.cssText = "padding:0; background-color: rgba(34 38 43 /.7)";
+                document.getElementById("header_container").classList.remove("scrol_header");
             }
         }
     </script>
